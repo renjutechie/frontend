@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Service</title>
+</head>
+<body>
+    <h1>Frontend Service</h1>
+    <div id="message"></div>
+    <script>
+        fetch('http://backend-backend.app.svc.cluster.local/api/message')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').innerText = data.message;
+            });
+    </script>
+</body>
+</html>
